@@ -12,13 +12,11 @@ export default function App() {
     }
   };
 
-  const removeValue = () => {
-    if (counter >= 1) {
+  function removeValue() {
+    if (counter > 0) {
       setCounter(counter - 1);
-    } else {
-      alert('Counter is already at minimum value');
     }
-  };
+  }
   return (
     <>
       <h2>Hello Welcome to my Counter App</h2>
@@ -30,6 +28,8 @@ export default function App() {
       </div>
 
       <div>
+        <button onClick={() => setCounter(counter * 5)}>5X Value</button>
+        <button onClick={() => setCounter(1)}>Reset Value</button>
         <p>New Value: {counter}</p>
       </div>
     </>
